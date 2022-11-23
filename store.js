@@ -8,4 +8,7 @@ export const todos = {
     };
     this.todoList.push(newTask);
   },
+  deleteTask(taskId) {
+    this.todoList = this.todoList.filter((task) => task.id !== taskId);
+  },
 };

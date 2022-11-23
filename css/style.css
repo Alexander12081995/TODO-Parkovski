@@ -1,3 +1,26 @@
+body[data-theme='light'] {
+    --cl-btn-text: rgb(0, 0, 0);
+    --cl-text: rgb(9, 51, 54);
+    --bg-color: linear-gradient(90deg, #e5b2a9,#ddd1c5,#d1dbad,#92ad76);;
+    --in-task: cornsilk;
+    --bord: white;
+    --btn1-color: aquamarine;
+    --list: linear-gradient(90deg, #83a3b4,#7898f0,#c4a7c5);;
+    --btn2-color: green;
+}
+
+body[data-theme='dark'] {
+    --cl-btn-text: azure;
+    --cl-text: rgb(255, 255, 255);
+    --bg-color: linear-gradient(90deg, #342326,#580413,#540021,#580413,#342326);;
+    --in-task: rgb(223, 208, 148);
+    --bord:#580413;
+    --btn1-color: rgb(17, 78, 58);
+    --list: linear-gradient(90deg, #1d7952,#32b85a,#607a28);;
+    --btn2-color: rgb(64, 76, 141);
+}
+
+
 * {
     margin: 0 ;
     padding: 0;
@@ -7,8 +30,31 @@
 }
 
 body {
-    background-color: rgb(224, 222, 219);
+    color: var(--cl-text);
+    background: var(--bg-color);
 }
+
+.button_theme {
+    display: flex;
+    column-gap: 10px;
+}
+
+.button_theme__light {
+font-size: 20px;
+min-width: 100px;
+border-radius: 10px 0 ;
+border: 1px solid grey;
+background: var(--in-task);
+}
+
+.button_theme__dark {
+    font-size: 20px;
+    min-width: 100px;
+    border-radius: 0 10px;
+    border: 1px solid grey;
+background: var(--in-task);
+}
+
 .add_list {
    text-align: center;
 }
@@ -23,19 +69,20 @@ body {
     font-size: 25px;
     min-width: 800px;
     border-radius: 30px;
-    background-color: cornsilk;
+    background-color: var(--in-task);
     
-    border: 1px solid white;
+    border: 1px solid var(--bord);
 }
 
 .addTask {
+    color: var(--cl-btn-text);
     margin: 0;
     min-width: 200px;
     min-height: 50px;
     font-size: 20px;
     border-radius: 30px;
-    border: 1px solid white;
-    background-color: aquas;
+    border: 1px solid var(--bord);
+    background-color:var(--btn1-color);
 }
 
 .todo_list {
@@ -61,7 +108,7 @@ body {
     padding: 10px;
     text-align: left;
     font-size: 30px;
-    background-color: cadetblue;
+    background: var(--list);
     border-radius: 20px;
 }
 
@@ -72,22 +119,36 @@ body {
     
 }
 
-.task_eddit {
+.task_edit {
     margin-right: 10px;
-    min-height: 30px;
-    min-width: 90px;
+    min-height: 40px;
+    min-width: 120px;
     border-radius: 10px;
-    border: 1px solid cadetblue;
-    background-color: green;
-    font-size: 15px;
+    border: 1px solid var(--list);
+    background-color: var(--btn2-color);
+    font-size: 20px;
+    color: var(--cl-btn-text);
 }
 
 .task_delete {
-    min-height: 30px;
-    min-width: 90px;
+    min-height: 40px;
+    min-width: 120px;
     border-radius: 10px;
-    border: 1px solid cadetblue;
-    background-color: green;
-    font-size: 15px;
+    border: 1px solid var(--list);
+    background-color: var(--btn2-color);
+    font-size: 20px;
+    color: var(--cl-btn-text);
+}
 
+.completed {
+    display: flex;
+}
+
+.checkbox {
+    width: 15px;
+}
+
+.completed_checkbox {
+    margin-left: 10px;
+    font-size: 20px;
 }
