@@ -34,6 +34,31 @@ body {
     background: var(--bg-color);
 }
 
+button {
+    cursor: pointer;
+}
+.text_task {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.search {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search_input {
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    min-width: 300px;
+    min-height: 30px;
+    border-radius: 15px;
+    font-size: 17px;
+    border: none;
+    cursor: help;
+}
+
 .button_theme {
     display: flex;
     column-gap: 10px;
@@ -42,6 +67,7 @@ body {
 .button_theme__light {
 font-size: 20px;
 min-width: 100px;
+max-height: 30px;
 border-radius: 10px 0 ;
 border: 1px solid grey;
 background: var(--in-task);
@@ -50,6 +76,7 @@ background: var(--in-task);
 .button_theme__dark {
     font-size: 20px;
     min-width: 100px;
+    max-height: 30px;
     border-radius: 0 10px;
     border: 1px solid grey;
 background: var(--in-task);
