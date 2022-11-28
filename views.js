@@ -6,6 +6,7 @@ const form = document.querySelector(".form");
 const buttonThemeLight = document.querySelector(".button_theme__light");
 const buttonThemeDark = document.querySelector(".button_theme__dark");
 const searchInput = document.querySelector(".search_input");
+const buttonCompleted = document.querySelector(".button-comleted");
 
 buttonThemeLight.addEventListener("click", () => {
   const themeName = document.body.getAttribute("data-theme");
@@ -36,7 +37,7 @@ function renderTodo() {
   }
   todos.todoList.forEach((todo) => {
     ul.innerHTML += `
-        <li class="list_task">
+        <li class="${todo.checked ? "list_task task_theme" : "list_task"}">
         <div>
           <p>${todo.taskName}</p>
               <div class="completed">
@@ -92,6 +93,15 @@ function addTodo() {
     }
   });
 }
+
+function taskCompleted() {
+  buttonCompleted.addEventListener("click", (e) => {
+    todos.todoList = todos.todoList.filter((todo) => todo.checked === true);
+    renderTodo();
+  });
+}
+
+taskCompleted();
 
 function deleteTodo() {
   ul.addEventListener("click", (e) => {
